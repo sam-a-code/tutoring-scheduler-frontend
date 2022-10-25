@@ -2,8 +2,8 @@ import React, { useEffect, useState} from "react";
 import AppointmentForm from "./AppointmentForm";
 import Appointment from "./Appointment"
 
-function AppointmentParent() {
 
+function AppointmentParent() {
 const [appointments, setAppointments] = useState([])
 
   useEffect(() => {
