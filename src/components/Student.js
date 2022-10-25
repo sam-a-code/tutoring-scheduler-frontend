@@ -10,14 +10,21 @@ function Student() {
       .then((students) => setStudents(students));
   }, []);
 
+  function removeStudent(id) {
+    const removeStudentCard = students.filter((student) => student.id !== id);
+    setStudents(removeStudentCard);
+  }
+
   const studentList = students.map((student) => {
     return <StudentCard
     key={student.id}
+    id={student.id}
     first_name={student.first_name}
     last_name={student.last_name}
     age={student.age}
     location={student.location}
     subject={student.subject}
+    removeStudent={removeStudent}
     />;
   });
 

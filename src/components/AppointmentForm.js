@@ -1,4 +1,6 @@
 import React, { useEffect, useState} from "react";
+import {useHistory} from 'react-router-dom'
+
 
 function AppointmentForm({addAppointment}) {
   const [date, setDate] = useState("")
@@ -6,9 +8,12 @@ function AppointmentForm({addAppointment}) {
   const [notes, setNotes] = useState("")
   const [tutor, setTutor] = useState("")
   const [location, setLocation] = useState("")
+  const history = useHistory()
+
 
   function handleSubmit(e) {
     e.preventDefault();
+    history.push('/appointments')
     fetch('http://localhost:9292/appointments', {
       method: 'POST',
       headers: {
