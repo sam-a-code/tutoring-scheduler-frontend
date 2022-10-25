@@ -11,11 +11,8 @@ function Tutor () {
     }, [])
 
   const tutorList = tutors.map((tutor) => {
-    return (
-      <TutorCard
-      key={tutor.id}
-        />
-    ) })
+    return <TutorCard key={tutor.id} tutor={tutor} />;
+  });
 
   return (
     <div>
