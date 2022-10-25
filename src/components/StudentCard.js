@@ -11,9 +11,9 @@ function StudentCard({id, first_name, last_name, age, location, subject, removeS
     return (
         <div>
             <h1>{first_name} {last_name}</h1>
-            <h2>{age}</h2>
-            <h2>{location}</h2>
-            <h2>{subject}</h2>
+            <h2>Age: {age}</h2>
+            <h2>Location: {location}</h2>
+            <h2>Field of Study: {subject}</h2>
             <button onClick={handleDeleteClick}>Click to remove a student from the tutoring list!</button>
             <br></br>
         </div>
