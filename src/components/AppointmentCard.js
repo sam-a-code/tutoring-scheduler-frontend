@@ -5,7 +5,7 @@ function AppointmentCard({}) {
         <div>
             <h1>{}</h1>
             <h2>{}</h2>
-            <a href={url} target="_blank">Click to change or cancel appointment.</a>
+            <a>Click to change or cancel appointment.</a>
             <br></br>
         </div>
     )
