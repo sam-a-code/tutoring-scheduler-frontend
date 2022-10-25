@@ -14,6 +14,12 @@ function Appointment () {
     return (
       <AppointmentCard
       key={appointment.id}
+      date={appointment.date}
+      time={appointment.time}
+      notes={appointment.notes}
+      location={appointment.location}
+      tutor_id={appointment.tutor_id}
+      student_id={appointment.student_id}
         />
     ) })
 
