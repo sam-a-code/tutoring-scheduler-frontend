@@ -11,10 +11,11 @@ function Appointment ({appointments, setAppointments}) {
       time={appointment.time}
       notes={appointment.notes}
       location={appointment.location}
-      tutor_id={appointment.tutor_id}
-      student_id={appointment.student_id}
-        />
-    ) })
+      tutor={appointment.tutor}
+      student={appointment.student}
+      />
+    )
+  })
 
   return (
     <div>
