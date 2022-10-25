@@ -11,7 +11,14 @@ function Student() {
   }, []);
 
   const studentList = students.map((student) => {
-    return <StudentCard key={student.id} />;
+    return <StudentCard
+    key={student.id}
+    first_name={student.first_name}
+    last_name={student.last_name}
+    age={student.age}
+    location={student.location}
+    subject={student.subject}
+    />;
   });
 
   return (
