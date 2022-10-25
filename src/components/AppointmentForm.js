@@ -1,39 +1,38 @@
 import React, { useEffect, useState} from "react";
 
-function AppointmentForm({}) {
+function AppointmentForm({addAppointment}) {
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
   const [notes, setNotes] = useState("")
   const [tutor, setTutor] = useState("")
   const [location, setLocation] = useState("")
 
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     fetch('http://localhost:9292/appointments', {
-//       method: 'POST',
-//       headers: {
-//         "Content-Type": "application/json"},
-//       body: JSON.stringify({
-//         date: date,
-//         time: time,
-//         notes: notes,
-//         tutor: tutor,
-//         location: location
-//       })
-//     })
-//     let newAppointment = {
-//       date: date,
-//       time: time,
-//       notes: notes,
-//       tutor: tutor,
-//       location: location
-//     }
-//     addAppointment(newAppointment)
-//   }
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch('http://localhost:9292/appointments', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"},
+      body: JSON.stringify({
+        date: date,
+        time: time,
+        notes: notes,
+        tutor: tutor,
+        location: location
+      })
+    })
+    let newAppointment = {
+      date: date,
+      time: time,
+      notes: notes,
+      tutor: tutor,
+      location: location
+    }
+    addAppointment(newAppointment)
+  }
 
 return (
-    <div>
-    {/* <div onSubmit={handleSubmit}> */}
+    <div onSubmit={handleSubmit}>
       <h2 >Schedule a new tutoring session!</h2>
       <form >
         <input type="text" name="date" placeholder="Desired Date" value={date} onChange={(e) => setDate(e.target.value)}/>

@@ -1,14 +1,7 @@
 import React, {useState, useEffect} from "react";
 import AppointmentCard from "./AppointmentCard";
 
-function Appointment () {
-  const [appointments, setAppointments] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:9292/appointments')
-    .then((r) => r.json())
-    .then((appointments) => setAppointments(appointments))
-    }, [])
+function Appointment ({appointments, setAppointments}) {
 
   const appointmentList = appointments.map((appointment) => {
     return (
