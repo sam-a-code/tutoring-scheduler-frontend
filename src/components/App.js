@@ -1,13 +1,14 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Home from './Home';
-import Appointment from './Appointment';
+import AppointmentParent from './AppointmentParent';
 import Student from './Student';
 import Tutor from './Tutor';
-import AppointForm from './AppointmentForm';
+import AppointmentForm from './AppointmentForm';
 import {Switch, Route} from 'react-router-dom';
 
 function App() {
+
 
   return (
     <div>
@@ -20,13 +21,13 @@ function App() {
             <Tutor />
           </Route>
           <Route exact path="/appointments">
-            <Appointment />
+            <AppointmentParent />
           </Route>
           <Route exact path="/students">
             <Student/>
           </Route>
           <Route exact path="/newappointment">
-            <AppointForm/>
+            <AppointmentForm />
           </Route>
           <Route exact path="/">
             <Home />
