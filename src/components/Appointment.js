@@ -7,6 +7,7 @@ function Appointment ({appointments, setAppointments}) {
     return (
       <AppointmentCard
       key={appointment.id}
+      id={appointment.id}
       date={appointment.date}
       time={appointment.time}
       notes={appointment.notes}
