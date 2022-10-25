@@ -16,6 +16,11 @@ const [appointments, setAppointments] = useState([])
         setAppointments(appointments => [...appointments, newAppointment])
       }
 
+      // need to replace this with id stuff
+      // function updateAppointments(updatedAppointment) {
+      //   setAppointments(appointments => [...appointments, newAppointment])
+      // }
+
     return (
         <div>
     <AppointmentForm addAppointment={addAppointment}/>
