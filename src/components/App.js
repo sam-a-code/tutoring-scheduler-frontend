@@ -1,11 +1,11 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Home from './Home';
-import Appointment from './Appointment'
+import Appointment from './Appointment';
 import Student from './Student';
 import Tutor from './Tutor';
 import AppointForm from './AppointmentForm';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
 
