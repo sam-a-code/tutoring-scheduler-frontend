@@ -10,7 +10,7 @@ function TutorCard({ tutor }) {
       </h2>
       <h2>Location: {location}</h2>
       <h3>Area of Expertise: {subject}</h3>
-      <button className="button">Click to set an appointment with this tutor!</button>
+      <button className="button">Click to set an appointment!</button>
       <br></br>
     </div>
   );

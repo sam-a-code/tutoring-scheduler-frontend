@@ -19,7 +19,7 @@ function AppointmentCard({date, time, notes, location, tutor, student, id}) {
     function handleSubmit(e) {
         e.preventDefault();
         history.push('/appointments')
-        fetch('http://localhost:9292/appointments${:id}', {
+        fetch('http://localhost:9292/appointments/${:id}', {
           method: 'PATCH',
           headers: {
             "Content-Type": "application/json"},
