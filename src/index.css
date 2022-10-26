@@ -36,6 +36,12 @@ code {
   font-size: 25px;
 }
 
+.home-body{
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
 .card {
   margin-left: 2%;
   margin-right: 2%;
