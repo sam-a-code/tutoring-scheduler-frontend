@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import AppointmentCard from "./AppointmentCard";
 
-function Appointment ({appointments, setAppointments, students, tutors, updateAppointment, removeAppointment, newAppointmentList}) {
-
+function Appointment ({ appointments, students, tutors, removeAppointment, updateAppointment }) {
 
   const appointmentList = appointments.map((appointment) => {
     return (
@@ -18,9 +17,8 @@ function Appointment ({appointments, setAppointments, students, tutors, updateAp
       tutors={tutors}
       students={students}
       appointment={appointment}
-      updateAppointment={updateAppointment}
-      setAppointments={setAppointments}
       removeAppointment={removeAppointment}
+      updateAppointment={updateAppointment}
       />
     )
   })

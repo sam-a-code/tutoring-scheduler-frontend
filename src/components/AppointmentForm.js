@@ -1,8 +1,8 @@
-import React, { useEffect, useState} from "react";
-import {useHistory} from 'react-router-dom'
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom'
 
 
-function AppointmentForm({addAppointment, tutors, setTutors, students, setStudents}) {
+function AppointmentForm({ addAppointment, tutors, students }) {
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
   const [tutorName, setTutorName] = useState("")
@@ -31,8 +31,7 @@ function AppointmentForm({addAppointment, tutors, setTutors, students, setStuden
     .then(r => r.json())
     .then(data => addAppointment(data[0]))
   }
-console.log(studentName)
-console.log(tutorName)
+
 return (
     <div onSubmit={handleSubmit} className="form-input">
       <h2 >Schedule a new tutoring session!</h2>

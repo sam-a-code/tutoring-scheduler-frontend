@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Home from './Home';
 import Appointment from './Appointment';
 import Student from './Student';
 import Tutor from './Tutor';
 import AppointmentForm from './AppointmentForm';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   // appointments state
@@ -21,14 +21,23 @@ function App() {
     setAppointments(appointments => [...appointments, newAppointment])
     }
 
-    function updateAppointment(updatedAppointment){
-      setAppointments(prev => appointments)
-    }
+  function updateAppointment(updatedAppointment){
+    const updatedAppointments = appointments.map((appointment) => {
+      if (appointment.id === updatedAppointment.id) {
+        return updatedAppointment;
+      }
+      else {
+        return appointment;
+      }
+    })
+    setAppointments(updatedAppointments);
+    console.log(updatedAppointments);
+  }
 
-    function removeAppointment(id) {
-      const removeSelectedAppointment = appointments.filter((appointment) => appointment.id !== id);
-      setAppointments(removeSelectedAppointment);
-    }
+  function removeAppointment(id) {
+    const removeSelectedAppointment = appointments.filter((appointment) => appointment.id !== id);
+    setAppointments(removeSelectedAppointment);
+  }
 
       // student state
       const [students, setStudents] = useState([]);
@@ -65,7 +74,7 @@ function App() {
             <Tutor tutors={tutors} setTutors={setTutors}/>
           </Route>
           <Route exact path="/appointments">
-            <Appointment appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment} tutors={tutors} students={students} removeAppointment={removeAppointment}/>
+            <Appointment appointments={appointments} updateAppointment={updateAppointment} addAppointment={addAppointment} tutors={tutors} students={students} removeAppointment={removeAppointment}/>
           </Route>
           <Route exact path="/students">
             <Student removeStudent={removeStudent} students={students} setStudents={setStudents}/>
