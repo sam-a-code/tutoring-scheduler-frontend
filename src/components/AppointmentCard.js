@@ -40,7 +40,7 @@ function AppointmentCard({ date, time, notes, location, tutor, student, id, appo
           })
         })
         .then(r => r.json())
-        .then(data => updateAppointment(data))
+        .then(data => updateAppointment(data[0]))
       }
 
     return (
