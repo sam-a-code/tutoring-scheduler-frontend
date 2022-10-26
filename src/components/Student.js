@@ -30,7 +30,7 @@ function Student() {
 
   return (
     <div>
-      <h2>Students</h2>
+      <h1 className="section-header">Students</h1>
       <ul>{studentList}</ul>
     </div>
   );

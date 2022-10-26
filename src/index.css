@@ -1,13 +1,129 @@
+@import url(//fonts.googleapis.com/css2?family=Fuzzy+Bubbles);
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* margin: 0; */
+  font-family: 'Fuzzy Bubbles', serif;
+  /* margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%; */
+  /* font-family: Courier */
+  /* font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+
+
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  /* font-family: 'Dancing Script', cursive; */
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header{
+  text-align: center;
+}
+
+.home{
+  text-align: center;
+  font-size: 25px;
+}
+
+.card {
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  flex: 1 200px;
+  max-width: 25%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card:hover, .card:focus, .card:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.navbar {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 3px;
+  /* width: 50%; */
+  box-sizing: border-box;
+  padding: 10px;
+  flex: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  position: relative;
+  padding: 3px;
+  font-family: 'Fuzzy Bubbles', serif;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+.form-input {
+  position: relative;
+  padding: 3px;
+  font-family: 'Fuzzy Bubbles', serif;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.section-header {
+  margin-left: 7%;
+  text-decoration: underline;
+}
+
+.section-subheader {
+  margin-left: 7%;
+}
+
+.tutor-name {
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.paper{
+  /* width: 600px;
+  height: 700px; */
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+  height: 100%;
+
+}
+
+.paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255,0,0,0.6);
+}
+

@@ -37,22 +37,22 @@ function AppointmentForm({addAppointment}) {
   }
 
 return (
-    <div onSubmit={handleSubmit}>
+    <div onSubmit={handleSubmit} className="form-input">
       <h2 >Schedule a new tutoring session!</h2>
       <form >
-        <input type="text" name="date" placeholder="Desired Date" value={date} onChange={(e) => setDate(e.target.value)}/>
+        <input className="form-input" type="text" name="date" placeholder="Desired Date" value={date} onChange={(e) => setDate(e.target.value)}/>
         <br></br>
-        <input type="text" name="time" placeholder="Desired Time" value={time} onChange={(e) => setTime(e.target.value)}/>
+        <input className="form-input" type="text" name="time" placeholder="Desired Time" value={time} onChange={(e) => setTime(e.target.value)}/>
         <br></br>
-        <input type="text" name="notes" placeholder="Notes for tutor" value={notes} onChange={(e) => setNotes(e.target.value)}/>
+        <input className="form-input" type="text" name="notes" placeholder="Notes for tutor" value={notes} onChange={(e) => setNotes(e.target.value)}/>
         <br></br>
-        <input type="text" name="tutor" placeholder="Tutor" value={tutor} onChange={(e) => setTutor(e.target.value)}/>
+        <input className="form-input" type="text" name="tutor" placeholder="Tutor" value={tutor} onChange={(e) => setTutor(e.target.value)}/>
         <br></br>
-        <input type="text" name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
+        <input className="form-input" type="text" name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
         <br></br>
 
         <br></br>
-        <button type="submit">Submit appointment request</button>
+        <button type="submit" className="button">Submit appointment request</button>
       </form>
     </div>
   );

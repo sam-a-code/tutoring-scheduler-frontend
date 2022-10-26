@@ -20,7 +20,7 @@ function Appointment ({appointments, setAppointments}) {
 
   return (
     <div>
-      <h2>Appointments</h2>
+      <h1 className="section-header">Appointments</h1>
     <ul>
       {appointmentList}
     </ul>

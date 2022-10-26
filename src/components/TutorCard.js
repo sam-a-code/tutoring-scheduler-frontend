@@ -4,13 +4,13 @@ function TutorCard({ tutor }) {
   const { first_name, last_name, location, subject } = tutor;
 
   return (
-    <div>
-      <h1>
+    <div className="card">
+      <h2 className="tutor-name">
         {first_name} {last_name}
-      </h1>
+      </h2>
       <h2>Location: {location}</h2>
       <h3>Area of Expertise: {subject}</h3>
-      <a>Click to set an appointment with this tutor!</a>
+      <button className="button">Click to set an appointment with this tutor!</button>
       <br></br>
     </div>
   );

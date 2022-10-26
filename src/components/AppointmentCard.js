@@ -42,13 +42,13 @@ function AppointmentCard({date, time, notes, location, tutor, student, id}) {
       }
 
     return (
-        <div>
-            <h1>{date}, {time}</h1>
-            <h2>Tutor: {tutor.first_name} {tutor.last_name}</h2>
-            <h2>Student: {student.first_name} {student.last_name}</h2>
+        <div className='card'>
+            <h2>{date}, {time}</h2>
+            <h3>Tutor: {tutor.first_name} {tutor.last_name}</h3>
+            <h3>Student: {student.first_name} {student.last_name}</h3>
             <h3>Meeting Location: {location}</h3>
             <h3>Notes: {notes}</h3>
-            <button onClick={expandForm}>Click to change or cancel appointment.</button>
+            <button className='button' onClick={expandForm}>Click to change or cancel appointment.</button>
             <br></br>
 
             {expand &&
