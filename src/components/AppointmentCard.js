@@ -2,18 +2,22 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom'
 
 
-function AppointmentCard({date, time, notes, location, tutor, student, id}) {
+function AppointmentCard({date, time, notes, location, tutor, student, id, tutors, students, appointment}) {
     const [expand, setExpand] = useState(false)
-    const [newDate, setNewDate] = useState("")
-    const [newTime, setNewTime] = useState("")
-    const [newNotes, setNewNotes] = useState("")
-    const [newTutor, setNewTutor] = useState("")
-    const [newLocation, setNewLocation] = useState("")
+    const [updatedDate, setUpdatedDate] = useState(date)
+    const [updatedTime, setUpdatedTime] = useState(time)
+    const [updatedNotes, setUpdatedNotes] = useState(notes)
+    // const [updatedTutorName, setUpdatedTutorName] = useState("")
+    // const [updatedStudentName, setUpdatedStudentName] = useState("")
+    const [updatedLocation, setUpdatedLocation] = useState(location)
     const history = useHistory()
-
 
     function expandForm() {
         setExpand(prev => !prev)
+    }
+
+    function cancelAppointment() {
+
     }
 
     function handleSubmit(e) {
@@ -24,11 +28,10 @@ function AppointmentCard({date, time, notes, location, tutor, student, id}) {
           headers: {
             "Content-Type": "application/json"},
           body: JSON.stringify({
-            date: newDate,
-            time: newTime,
-            notes: newNotes,
-            tutor: newTutor,
-            location: newLocation
+            date: updatedDate,
+            time: updatedTime,
+            notes: updatedNotes,
+            location: updatedLocation
           })
         })
         // let updatedAppointment = {
@@ -42,10 +45,11 @@ function AppointmentCard({date, time, notes, location, tutor, student, id}) {
       }
 
     return (
+
         <div className='card'>
             <h2>{date}, {time}</h2>
-            <h3>Tutor: {tutor.first_name} {tutor.last_name}</h3>
-            <h3>Student: {student.first_name} {student.last_name}</h3>
+            <h3>Tutor: {tutor?.first_name} {tutor?.last_name}</h3>
+            <h3>Student: {student?.first_name} {student?.last_name}</h3>
             <h3>Meeting Location: {location}</h3>
             <h3>Notes: {notes}</h3>
             <button className='button' onClick={expandForm}>Click to change or cancel appointment.</button>
@@ -53,23 +57,21 @@ function AppointmentCard({date, time, notes, location, tutor, student, id}) {
 
             {expand &&
                 <div onSubmit={handleSubmit}>
-                <h2>Make a change to your appointment</h2>
-                <form >
-                    <input type="text" name="date" placeholder="Desired Date" value={newDate} onChange={(e) => setNewDate(e.target.value)}/>
-                    <br></br>
-                    <input type="text" name="time" placeholder="Desired Time" value={newTime} onChange={(e) => setNewTime(e.target.value)}/>
-                    <br></br>
-                    <input type="text" name="notes" placeholder="Notes for tutor" value={newNotes} onChange={(e) => setNewNotes(e.target.value)}/>
-                    <br></br>
-                    <input type="text" name="tutor" placeholder="Tutor" value={newTutor} onChange={(e) => setNewTutor(e.target.value)}/>
-                    <br></br>
-                    <input type="text" name="location" placeholder="Location" value={newLocation} onChange={(e) => setNewLocation(e.target.value)}/>
-                    <br></br>
+                <h4>Make a change to your appointment</h4>
+                <form className="form-input">
+                  <input className="form-input" type="text" name="date" placeholder={date} value={updatedDate} onChange={(e) => setUpdatedDate(e.target.value)}/>
+                  <br></br>
+                  <input className="form-input" type="text" name="time" placeholder="Desired Time" value={updatedTime} onChange={(e) => setUpdatedTime(e.target.value)}/>
+                  <br></br>
+                  <input className="form-input" type="text" name="notes" placeholder="Notes for tutor" value={updatedNotes} onChange={(e) => setUpdatedNotes(e.target.value)}/>
+                  <br></br>
+                  <input className="form-input" type="text" name="location" placeholder="Location" value={updatedLocation} onChange={(e) => setUpdatedLocation(e.target.value)}/>
+                  <br></br>
+                  <br></br>
+                  <button type="submit" className='button'>Submit appointment changes</button><br></br>
+                    <button className='button' onClick={cancelAppointment}> Cancel appointment</button>
+                    </form>
 
-                    <br></br>
-                    <button type="submit">Submit appointment changes</button><br></br>
-                    <button > Cancel appointment</button>
-                </form>
                 </div>}
         </div>
     )

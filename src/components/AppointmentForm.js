@@ -2,11 +2,12 @@ import React, { useEffect, useState} from "react";
 import {useHistory} from 'react-router-dom'
 
 
-function AppointmentForm({addAppointment}) {
+function AppointmentForm({addAppointment, tutors, setTutors, students, setStudents}) {
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
+  const [tutorName, setTutorName] = useState("")
+  const [studentName, setStudentName] = useState("")
   const [notes, setNotes] = useState("")
-  const [tutor, setTutor] = useState("")
   const [location, setLocation] = useState("")
   const history = useHistory()
 
@@ -22,20 +23,16 @@ function AppointmentForm({addAppointment}) {
         date: date,
         time: time,
         notes: notes,
-        tutor: tutor,
-        location: location
+        tutor_id: parseInt(tutorName),
+        location: location,
+        student_id: parseInt(studentName)
       })
     })
-    let newAppointment = {
-      date: date,
-      time: time,
-      notes: notes,
-      tutor: tutor,
-      location: location
-    }
-    addAppointment(newAppointment)
+    .then(r => r.json())
+    .then(data => addAppointment(data[0]))
   }
-
+console.log(studentName)
+console.log(tutorName)
 return (
     <div onSubmit={handleSubmit} className="form-input">
       <h2 >Schedule a new tutoring session!</h2>
@@ -46,11 +43,16 @@ return (
         <br></br>
         <input className="form-input" type="text" name="notes" placeholder="Notes for tutor" value={notes} onChange={(e) => setNotes(e.target.value)}/>
         <br></br>
-        <input className="form-input" type="text" name="tutor" placeholder="Tutor" value={tutor} onChange={(e) => setTutor(e.target.value)}/>
+        <select onChange={(e) => setTutorName(e.target.value)} className="form-input" value={tutorName}>
+            {tutors.map((tutor) => <option value={tutor.id}>{tutor.first_name}</option>)}
+        </select>
+        <br></br>
+        <select onChange={(e) => setStudentName(e.target.value)} className="form-input" value={studentName}>
+            {students.map((student) => <option value={student.id}>{student.first_name}</option>)}
+        </select>
         <br></br>
         <input className="form-input" type="text" name="location" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)}/>
         <br></br>
-
         <br></br>
         <button type="submit" className="button">Submit appointment request</button>
       </form>

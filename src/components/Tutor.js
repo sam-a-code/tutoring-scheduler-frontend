@@ -1,14 +1,8 @@
 import React, {useState, useEffect} from "react";
 import TutorCard from "./TutorCard";
 
-function Tutor () {
-  const [tutors, setTutors] = useState([])
+function Tutor ({tutors, setTutors}) {
 
-  useEffect(() => {
-    fetch('http://localhost:9292/tutors')
-    .then((r) => r.json())
-    .then((tutors) => setTutors(tutors))
-    }, [])
 
   const tutorList = tutors.map((tutor) => {
     return <TutorCard key={tutor.id} tutor={tutor} />;

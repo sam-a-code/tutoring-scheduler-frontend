@@ -20,11 +20,29 @@ function App() {
   function addAppointment(newAppointment) {
     setAppointments(appointments => [...appointments, newAppointment])
     }
-    
-      // need to replace this with id stuff
-      // function updateAppointments(updatedAppointment) {
-      //   setAppointments(appointments => [...appointments, newAppointment])
-      // }
+
+      // student state
+      const [students, setStudents] = useState([]);
+
+      useEffect(() => {
+        fetch("http://localhost:9292/students")
+          .then((r) => r.json())
+          .then((students) => setStudents(students));
+      }, []);
+
+      function removeStudent(id) {
+        const removeStudentCard = students.filter((student) => student.id !== id);
+        setStudents(removeStudentCard);
+      }
+
+      //tutor state
+      const [tutors, setTutors] = useState([])
+
+      useEffect(() => {
+        fetch('http://localhost:9292/tutors')
+        .then((r) => r.json())
+        .then((tutors) => setTutors(tutors))
+        }, [])
 
   return (
     <div className='paper'>
@@ -35,16 +53,16 @@ function App() {
         <br></br>
         <Switch>
           <Route exact path="/tutors">
-            <Tutor />
+            <Tutor tutors={tutors} setTutors={setTutors}/>
           </Route>
           <Route exact path="/appointments">
-            <Appointment appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment}/>
+            <Appointment appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment} tutors={tutors} students={students}/>
           </Route>
           <Route exact path="/students">
-            <Student/>
+            <Student removeStudent={removeStudent} students={students} setStudents={setStudents}/>
           </Route>
           <Route exact path="/newappointment">
-            <AppointmentForm appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment}/>
+            <AppointmentForm appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment} tutors={tutors} students={students}/>
           </Route>
           <Route exact path="/">
             <Home />
