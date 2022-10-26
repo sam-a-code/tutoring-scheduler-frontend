@@ -13,7 +13,7 @@ function AppointmentCard({ date, time, notes, location, tutor, student, id, appo
     const history = useHistory()
 
     function expandForm() {
-        setExpand(prev => !prev)
+      setExpand(prev => !prev)
     }
 
     function handleAppointmentDelete() {
@@ -46,7 +46,6 @@ function AppointmentCard({ date, time, notes, location, tutor, student, id, appo
     return (
 
         <div className='card'>
-            <h3>{appointment.student_id}{appointment.tutor_id}</h3>
             <h2>{date}, {time}</h2>
             <h3>Tutor: {tutor?.first_name} {tutor?.last_name}</h3>
             <h3>Student: {student?.first_name} {student?.last_name}</h3>
@@ -63,10 +62,6 @@ function AppointmentCard({ date, time, notes, location, tutor, student, id, appo
                   <br></br>
                   <input className="form-input" type="text" name="time" placeholder="Desired Time" value={updatedTime} onChange={(e) => setUpdatedTime(e.target.value)}/>
                   <br></br>
-                  {/* <input className="form-input" type="text" name="tutor" placeholder="Tutor" value={tutorId} onChange={(e) => setTutorId(e.target.value.id)}/>
-                  <br></br>
-                  <input className="form-input" type="text" name="student" placeholder="Student" value={studentId} onChange={(e) => setStudentId(e.target.value.id)}/>
-                  <br></br> */}
                   <input className="form-input" type="text" name="notes" placeholder="Notes for tutor" value={updatedNotes} onChange={(e) => setUpdatedNotes(e.target.value)}/>
                   <br></br>
                   <input className="form-input" type="text" name="location" placeholder="Location" value={updatedLocation} onChange={(e) => setUpdatedLocation(e.target.value)}/>
