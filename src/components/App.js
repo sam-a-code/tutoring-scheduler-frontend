@@ -11,10 +11,11 @@ function App() {
 
 
   return (
-    <div>
+    <div className='paper'>
       <header>
         <NavBar/>
-        <h1>Tutor!</h1>
+        <br></br>
+        <h1 className='header'>Tutors + Appointments</h1>
         <br></br>
         <Switch>
           <Route exact path="/tutors">

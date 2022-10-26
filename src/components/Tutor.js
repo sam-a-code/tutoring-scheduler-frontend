@@ -16,7 +16,9 @@ function Tutor () {
 
   return (
     <div>
-      <h2>Tutors</h2>
+      <h1 className="section-header">Tutors</h1>
+      <h3 className="section-subheader">Click each tutor's name to see their subject expertise +</h3>
+      <h3 className="section-subheader">click the button to set an appointment with them!</h3>
     <ul>
       {tutorList}
     </ul>
