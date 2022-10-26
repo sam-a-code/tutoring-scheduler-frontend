@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom'
 
 
-function AppointmentCard({date, time, notes, location, tutor, student, id, tutors, students, appointment}) {
+function AppointmentCard({date, time, notes, location, tutor, student, id, tutors, setAppointments, students, appointment, updateAppointment, removeAppointment}) {
     const [expand, setExpand] = useState(false)
     const [updatedDate, setUpdatedDate] = useState(date)
     const [updatedTime, setUpdatedTime] = useState(time)
@@ -16,14 +16,18 @@ function AppointmentCard({date, time, notes, location, tutor, student, id, tutor
         setExpand(prev => !prev)
     }
 
-    function cancelAppointment() {
-
+    function handleAppointmentDelete() {
+      fetch(`http://localhost:9292/appointments/${id}`, {
+        method: "DELETE",
+      });
+      removeAppointment(id);
+      // console.log(appointments)
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         history.push('/appointments')
-        fetch('http://localhost:9292/appointments/${:id}', {
+        fetch(`http://localhost:9292/appointments/${id}`, {
           method: 'PATCH',
           headers: {
             "Content-Type": "application/json"},
@@ -31,17 +35,14 @@ function AppointmentCard({date, time, notes, location, tutor, student, id, tutor
             date: updatedDate,
             time: updatedTime,
             notes: updatedNotes,
-            location: updatedLocation
+            location: updatedLocation,
+            student_id: student,
+            tutor_id: tutor,
           })
         })
-        // let updatedAppointment = {
-        //   date: date,
-        //   time: time,
-        //   notes: notes,
-        //   tutor: tutor,
-        //   location: location
-        // }
-        // updateAppointments(updatedAppointment)
+        .then(r => r.json())
+        .then(data => setAppointments(data[0]))
+        console.log(students)
       }
 
     return (
@@ -69,7 +70,7 @@ function AppointmentCard({date, time, notes, location, tutor, student, id, tutor
                   <br></br>
                   <br></br>
                   <button type="submit" className='button'>Submit appointment changes</button><br></br>
-                    <button className='button' onClick={cancelAppointment}> Cancel appointment</button>
+                    <button className='button' onClick={handleAppointmentDelete}> Cancel appointment</button>
                     </form>
 
                 </div>}

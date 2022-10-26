@@ -21,6 +21,15 @@ function App() {
     setAppointments(appointments => [...appointments, newAppointment])
     }
 
+    function updateAppointment(updatedAppointment){
+      setAppointments(prev => appointments)
+    }
+
+    function removeAppointment(id) {
+      const removeSelectedAppointment = appointments.filter((appointment) => appointment.id !== id);
+      setAppointments(removeSelectedAppointment);
+    }
+
       // student state
       const [students, setStudents] = useState([]);
 
@@ -56,7 +65,7 @@ function App() {
             <Tutor tutors={tutors} setTutors={setTutors}/>
           </Route>
           <Route exact path="/appointments">
-            <Appointment appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment} tutors={tutors} students={students}/>
+            <Appointment appointments={appointments} setAppointments={setAppointments} addAppointment={addAppointment} tutors={tutors} students={students} removeAppointment={removeAppointment}/>
           </Route>
           <Route exact path="/students">
             <Student removeStudent={removeStudent} students={students} setStudents={setStudents}/>

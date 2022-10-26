@@ -3,7 +3,7 @@ import React from 'react';
 function StudentCard({id, first_name, last_name, age, location, subject, removeStudent}) {
 
     function handleDeleteClick() {
-        fetch(`http://localhost:9292/students${id}`, {
+        fetch(`http://localhost:9292/students/${id}`, {
           method: "DELETE",
         });
         removeStudent(id);
