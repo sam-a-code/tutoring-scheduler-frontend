@@ -46,12 +46,9 @@ code {
 .home{
   text-align: center;
   font-size: 25px;
-}
-
-.home-body{
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  line-height: 35px;
 }
 
 .card {
