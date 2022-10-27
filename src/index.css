@@ -1,25 +1,35 @@
 @import url(//fonts.googleapis.com/css2?family=Fuzzy+Bubbles);
 
 body {
-  /* margin: 0; */
   font-family: 'Fuzzy Bubbles', serif;
-  /* margin-left: 3%;
-  margin-right: 3%;
-  margin-bottom: 3%; */
-  /* font-family: Courier */
-  /* font-family: 'Courier New', Courier, monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-
-
   padding-top: 6px;
-  padding-left: 56px;
-  padding-right: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
   line-height: 25px;
-  /* font-family: 'Dancing Script', cursive; */
   font-size: 19px;
   letter-spacing: 1px;
-  word-spacing: 5px;
+  word-spacing: 5px
+}
+
+.paper{
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+  height: 100%;
+}
+
+.paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255,0,0,0.6);
 }
 
 code {
@@ -45,16 +55,17 @@ code {
 .card {
   margin-left: 2%;
   margin-right: 2%;
-  border-radius: 3px;
-  box-sizing: border-box;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 5px;
   padding-top: 25px;
   padding-bottom: 30px;
-  flex: 1 200px;
+  flex: 1 300px;
   max-width: 25%;
+  min-width: 325px;
   display: inline-block;
   vertical-align: middle;
+  border-radius: 3px;
+  box-sizing: border-box;
 }
 
 .card:hover, .card:focus, .card:active {
@@ -66,7 +77,6 @@ code {
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 3px;
-  /* width: 50%; */
   box-sizing: border-box;
   padding: 10px;
   flex: 250px;
@@ -92,7 +102,8 @@ code {
   font-family: 'Fuzzy Bubbles', serif;
   border-radius: 3px;
   margin-bottom: 3px;
-  text-align: center;
+  text-align: left;
+  vertical-align: middle;
 }
 
 .section-header {
@@ -109,27 +120,5 @@ code {
   font-size: 30px;
 }
 
-.paper{
-  /* width: 600px;
-  height: 700px; */
-  position: relative;
-  margin: 20px auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: white;
-  box-shadow: 0px 0px 5px 0px #888;
-  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
-  height: 100%;
 
-}
-
-.paper::before {
-  content: '';
-  width: 2px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 40px;
-  background-color: rgba(255,0,0,0.6);
-}
 
