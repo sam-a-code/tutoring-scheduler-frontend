@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import StudentCard from "./StudentCard";
 
-function Student({students, setStudents, removeStudent}) {
-
+function Student({ students, removeStudent }) {
   const studentList = students.map((student) => {
     return <StudentCard
     key={student.id}
