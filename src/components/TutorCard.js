@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function TutorCard({ tutor }) {
   const { first_name, last_name, location, subject } = tutor;
@@ -13,7 +12,7 @@ function TutorCard({ tutor }) {
       <h2>Location: {location}</h2>
       <h3>Area of Expertise: {subject}</h3>
       <Link to="/newappointment">
-      <button className="button">Click to set an appointment!</button>
+        <button className="button">Click to set an appointment!</button>
       </Link>
       <br></br>
     </div>
