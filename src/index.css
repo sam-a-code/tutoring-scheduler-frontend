@@ -83,6 +83,27 @@ code {
   justify-content: space-between;
 }
 
+.navbar-link:visited { 
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+ }
+
+.navbar-link, .nav-button {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-button {
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 10px;
+  font-family: 'Fuzzy Bubbles', serif;
+  border-radius: 3px;
+  background-color: white;
+}
+
 .button {
   position: relative;
   padding: 3px;
@@ -91,7 +112,7 @@ code {
   background-color: white;
 }
 
-.button:hover {
+.button:hover, .nav-button:hover {
   background-color: red;
 }
 

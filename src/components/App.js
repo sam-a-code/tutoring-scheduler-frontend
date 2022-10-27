@@ -67,7 +67,7 @@ function App() {
       <header>
         <NavBar />
         <br></br>
-        <h1 className="header">Tutors + Appointments</h1>
+        <h1 className="header">Tutor Appointments</h1>
         <br></br>
         <Switch>
           <Route exact path="/tutors">
