@@ -9,8 +9,8 @@ function Tutor ({ tutors }) {
   return (
     <div>
       <h1 className="section-header">Tutors</h1>
-      <h3 className="section-subheader">Click each tutor's name to see their subject expertise +</h3>
-      <h3 className="section-subheader">click the button to set an appointment!</h3>
+      <h3 className="section-subheader">See our available tutors below!</h3>
+      <h3 className="section-subheader">Click the button under each tutor's name to set an appointment</h3>
       <ul>
         {tutorList}
       </ul>

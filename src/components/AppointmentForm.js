@@ -39,8 +39,8 @@ function AppointmentForm({ addAppointment, tutors, students }) {
 
   return (
     <div onSubmit={handleSubmit} className="form-input">
-      <h2>Schedule a new tutoring session!</h2>
-      <form>
+      <h2 className="form-name">Schedule a new tutoring session!</h2>
+      <form className="form-new">
         <label>Date: </label>
         <input
           className="form-input"

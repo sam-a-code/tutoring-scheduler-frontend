@@ -39,6 +39,8 @@ code {
 
 .header{
   text-align: center;
+  margin: 0px;
+  margin-top: 10px
 }
 
 .home{
@@ -101,9 +103,14 @@ code {
   padding: 3px;
   font-family: 'Fuzzy Bubbles', serif;
   border-radius: 3px;
-  margin-bottom: 3px;
+  margin-bottom: 13px;
   text-align: left;
   vertical-align: middle;
+  line-height: 30px;
+}
+
+.form-new {
+  margin-left: 10%;
 }
 
 .section-header {
@@ -118,6 +125,12 @@ code {
 .tutor-name {
   text-decoration: underline;
   font-size: 30px;
+}
+
+.form-name {
+  text-decoration: underline;
+  font-size: 30px;
+  margin-left: 7%;
 }
 
 
