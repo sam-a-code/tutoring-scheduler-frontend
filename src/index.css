@@ -106,10 +106,14 @@ code {
 
 .button {
   position: relative;
-  padding: 3px;
+  padding: 5px;
+  padding-right: 7px;
+  padding-left: 7px;
   font-family: 'Fuzzy Bubbles', serif;
   border-radius: 3px;
   background-color: white;
+  margin: 3px;
+  align-items: center;
 }
 
 .button:hover, .nav-button:hover {
@@ -128,7 +132,7 @@ code {
 }
 
 .form-new {
-  margin-left: 10%;
+  margin-left: 7%;
 }
 
 .section-header {
