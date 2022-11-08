@@ -103,7 +103,7 @@ function App() {
             <Home />
           </Route>
           <Route path="*">
-            <h1 className="home-body">
+            <h1 className="home">
               Uh oh! Looks like you're not in class <br></br>and don't have a
               hall pass. <br></br>
               <br></br>Make an appointment with one of our tutors to <br></br>
