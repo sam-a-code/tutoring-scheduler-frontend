@@ -51,6 +51,7 @@ code {
   line-height: 35px;
 }
 
+
 .card {
   margin-left: 2%;
   margin-right: 2%;
@@ -83,7 +84,7 @@ code {
   justify-content: space-between;
 }
 
-.navbar-link:visited { 
+.navbar-link:visited {
   text-decoration: none;
   color: black;
   font-weight: bold;
